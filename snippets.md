@@ -25,10 +25,7 @@ Hyphens are typically used in artifact IDs not in group IDs
 
 ### Start/Stop alfresco:
 ````
-	tomcat/bin/startup.sh && tail -f tomcat/logs/catalina.out
-````
-
-```` 
+	tomcat/bin/startup.sh && tail -f tomcat/logs/catalina.out 
 	tomcat/bin/shutdown.sh
 ````
 
