@@ -86,11 +86,11 @@ Visualiza images in base64:
     return Base64.encodeBase64URLSafeString( arrBuff );
 ```
 
+Check if node ref is valid and has right type:
+
 ``` java
     fileFolderService.exists(nodeRef)
 ```
-
-Check if node ref is valid and has right type:
 
 ``` java
     QName nodeType = nodeService.getType(dest);
