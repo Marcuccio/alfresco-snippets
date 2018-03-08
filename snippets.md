@@ -45,7 +45,7 @@ Hyphens are typically used in artifact IDs not in group IDs
 4. ` java -jar /bin/alfresco-mmt.jar install   amps_share\mymodule-share.amp tomcat\webapps\share -force -nobackup -verbose `
 
 ### Usefull bash command/tips:
-- List of running process: `ps -ef | grep java ` 
+- List of JAVA running process: `ps -ef | grep java ` 
 - List of stopped process: `jobs `
 - List  of commands you are allowed to do: `sudo su -l `
 - Bring foreground process towards: `fg ` 
