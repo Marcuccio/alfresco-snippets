@@ -41,8 +41,8 @@ Hyphens are typically used in artifact IDs not in group IDs
 ### How to deploy AMPs:
 1. ` java -jar /bin/alfresco-mmt.jar list      tomcat\webapps\alfresco `
 2. ` java -jar /bin/alfresco-mmt.jar uninstall <moduleName> tomcat\webapps\alfresco `
-3. ` java -jar /bin/alfresco-mmt.jar install   amps\<moduleName>-repo.amp tomcat\webapps\alfresco -force -nobackup -verbose `
-4. ` java -jar /bin/alfresco-mmt.jar install   amps_share\<moduleName>-share.amp tomcat\webapps\share -force -nobackup -verbose `
+3. ` java -jar /bin/alfresco-mmt.jar install   amps\mymodule-repo.amp tomcat\webapps\alfresco -force -nobackup -verbose `
+4. ` java -jar /bin/alfresco-mmt.jar install   amps_share\mymodule-share.amp tomcat\webapps\share -force -nobackup -verbose `
 
 ### Usefull bash command/tips:
 - List of running process: `ps -ef | grep java ` 
