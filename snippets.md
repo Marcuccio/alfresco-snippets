@@ -8,7 +8,7 @@
 
 - Check of custom types model `/alfresco/s/api/classes/<prefix>_<name>`
 
-- If you apply a hot edit to the `share-config-custom.xml` you need to refresh all your webscripts from `\share\page\index`.
+- If you apply a hot edit to the `share-config-custom.xml` you need to refresh all your webscripts from `/share/page/index`.
 
 - Retrieve a repositoryID: `curl -s -u admin:alfresco "http://<hostname>:8080/alfresco/s/cmis" | grep repositoryId `
 
