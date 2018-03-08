@@ -75,7 +75,7 @@ Visualize images in base64:
 
 ``` html
 
-    <img src="data:${work.mimetype};base64,${work.fileBase64}" class="thumbnail"/>
+    <img src="data:${mimetype};base64,${fileBase64}" class="thumbnail"/>
 ```
 
 ``` java
