@@ -89,14 +89,10 @@ Visualize images in base64:
 Check if node ref is valid and has right type:
 
 ``` java
-    fileFolderService.exists(nodeRef)
-```
-
-``` java
-    QName nodeType = nodeService.getType(dest);
+    QName nodeType = nodeService.getType(nodeRef);
     FileFolderServiceType fileFolderNodeType = fileFolderService.getType(nodeType);
 
-    if (fileFolderService.exists(dest) || !fileFolderNodeType.equals(FileFolderServiceType.FOLDER) ) {
+    if (fileFolderService.exists(nodeRef) || !fileFolderNodeType.equals(FileFolderServiceType.FOLDER) ) {
         throw new WebScriptException(
                 HttpServletResponse.SC_BAD_REQUEST,
                 "Destination folder must be of type "+ContentModel.TYPE_FOLDER);
