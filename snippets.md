@@ -24,8 +24,13 @@ Hyphens are typically used in artifact IDs not in group IDs
 ````
 
 ### Start/Stop alfresco:
-> tomcat/bin/startup.sh && tail -f tomcat/logs/catalina.out
-> tomcat/bin/shutdown.sh
+````
+	tomcat/bin/startup.sh && tail -f tomcat/logs/catalina.out
+````
+
+```` 
+	tomcat/bin/shutdown.sh
+````
 
 ### Opzioni JVM alfresco:
 > tomcat/bin/setenv.bat
