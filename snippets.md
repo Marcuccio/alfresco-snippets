@@ -1,17 +1,8 @@
-#ALFRESCO NOTES
-
-### USEFULL tests or check
-- Ricerca avanzata
-- Versionamento
-
-### Important for alfresco 5.1+
-To compile is important add the following properties. See the [documentation!](http://docs.alfresco.com/5.1/tasks/alfresco-sdk-upgrading-alfresco-version-SDK-220-510-to-511.html)
-> mvn package -Ddependency.surf.version=6.3
+# ALFRESCO NOTES 
 
 #### Maven archetype generator:
-Hyphens are typically used in artifact IDs.
-Don't use "it-tai" as prefix for artifact IDs.
 > mvn archetype:generate -Dfilter=org.alfresco:
+> Hyphens are typically used in artifact IDs not in group IDs
 
 #### General tips:
 
