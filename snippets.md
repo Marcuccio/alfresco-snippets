@@ -63,7 +63,7 @@ Hyphens are typically used in artifact IDs not in group IDs
 
 ### Usefull snippets
 
-Header to set in order to show or dowload a document in a respose object in a Webscript. [IETF DOC](https://www.ietf.org/rfc/rfc2183.txt):
+Header to set in order to show or dowload a document in a respose object for Webscripts. [IETF DOC](https://www.ietf.org/rfc/rfc2183.txt):
 
 ``` java
 
@@ -71,7 +71,7 @@ Header to set in order to show or dowload a document in a respose object in a We
     res.addHeader("Content-Disposition", "attachment; filename=" + fileName);
 ```
 
-Visualiza images in base64:
+Visualize images in base64:
 
 ``` html
 
