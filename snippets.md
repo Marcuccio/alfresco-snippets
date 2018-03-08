@@ -33,10 +33,10 @@ Hyphens are typically used in artifact IDs not in group IDs
 > tomcat/bin/setenv.bat
 
 ### Hot deploy:
-1. From "share" browse to `Repository>Data dictionary>Models`
+1. In Alfresco-Share navigate to `Repository>Data dictionary>Models`
 2. Set property `model active = TRUE`
-3. check "alfresco/service/api/classes/<prefix>_<name>
-4. Will not visible until will the `share-config-custom.xml` will not be modified
+3. check `alfresco/service/api/classes/<prefix>_<name>`
+4. Will not visible until the `share-config-custom.xml` will not be modified
 
 ### How to deploy AMPs:
 1. ` java -jar /bin/alfresco-mmt.jar list      tomcat\webapps\alfresco `
