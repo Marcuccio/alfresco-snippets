@@ -17,10 +17,11 @@ Hyphens are typically used in artifact IDs not in group IDs
 
 - To enable surfbug: `/share/page/surfBugStatus`
 
-- To enable debug log level for JS-webscript: in `tomcat/shared/classes/alfresco/extension/custom-log4j.properties` change
-
+- To enable debug log level for JS-webscript: go to `tomcat/shared/classes/alfresco/extension/custom-log4j.properties` and change
+````
 	log4j.logger.org.alfresco.repo.jscript=debug
 	log4j.logger.org.alfresco.repo.jscript.ScriptLogger=debug
+````
 
 ### Start/Stop alfresco:
 > tomcat/bin/startup.sh && tail -f tomcat/logs/catalina.out
