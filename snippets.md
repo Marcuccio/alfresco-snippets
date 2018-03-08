@@ -13,66 +13,62 @@ Hyphens are typically used in artifact IDs.
 Don't use "it-tai" as prefix for artifact IDs.
 > mvn archetype:generate -Dfilter=org.alfresco:
 
-#### Utils:
+#### General tips:
 
-- Check di un tipo documentale `/alfresco/s/api/classes/<prefix>_<name>`
+- Check of custom types model `/alfresco/s/api/classes/<prefix>_<name>`
 
-- Se modificato il `share-config-custom.xml` è necessario refreshare i webscript da `\share\page\index`.
+- If you apply a hot edit to the `share-config-custom.xml` you need to refresh all your webscripts from `\share\page\index`.
 
-- curl -s -u admin:alfresco "http://<hostname>:8080/alfresco/s/cmis" | grep repositoryId
+- Retrieve a repositoryID: `curl -s -u admin:alfresco "http://<hostname>:8080/alfresco/s/cmis" | grep repositoryId `
 
-- Comando JAVA con classpath espilicito e redirect dell'output `java -cp ../lib/* -jar *.jar --console --port 9979 > /dev/null 2>&1 &`
+- CMIS endpoint `/alfresco/service/api/cmis`
 
-- Endpoint cmis da puntare `/alfresco/service/api/cmis`
+- To enable surfbug: `/share/page/surfBugStatus`
 
-- Abilitare surfbug: `/share/page/surfBugStatus`
-
-- Abilitare il log per i webscript JS in `tomcat/shared/classes/alfresco/extension/custom-log4j.properties`
+- To enable debug log level for JS-webscript: in `tomcat/shared/classes/alfresco/extension/custom-log4j.properties` change
 
 	log4j.logger.org.alfresco.repo.jscript=debug
 	log4j.logger.org.alfresco.repo.jscript.ScriptLogger=debug
 
-### Start alfresco:
-> tomcat/bin/startup.sh|.bat
+### Start/Stop alfresco:
+> tomcat/bin/startup.sh && tail -f tomcat/logs/catalina.out
+> tomcat/bin/shutdown.sh
 
 ### Opzioni JVM alfresco:
 > tomcat/bin/setenv.bat
 
-### Deploy a caldo:
-1. da share > Repository>Data dictionary>Models
-2. set metadato "model active" = TRUE
+### Hot deploy:
+1. From "share" browse to `Repository>Data dictionary>Models`
+2. Set property `model active = TRUE`
 3. check "alfresco/service/api/classes/<prefix>_<name>
-4. non attivo in share sino a che non si sarà  modificato il share-config-custom.xml
+4. Will not visible until will the `share-config-custom.xml` will not be modified
 
-### Installazione AMP:
-1. /alfresco-one/bin
-2. java -jar /bin/alfresco-mmt.jar list      tomcat\webapps\alfresco
-3. java -jar /bin/alfresco-mmt.jar uninstall modulo1 tomcat\webapps\alfresco
-4. java -jar /bin/alfresco-mmt.jar install   amps\modulo1-repo.amp tomcat\webapps\alfresco -force -nobackup -verbose
-5. java -jar /bin/alfresco-mmt.jar install   amps_share\modulo1-share.amp tomcat\webapps\share -force -nobackup -verbose
+### How to deploy AMPs:
+1. java -jar /bin/alfresco-mmt.jar list      tomcat\webapps\alfresco
+2. java -jar /bin/alfresco-mmt.jar uninstall <moduleName> tomcat\webapps\alfresco
+3. java -jar /bin/alfresco-mmt.jar install   amps\<moduleName>-repo.amp tomcat\webapps\alfresco -force -nobackup -verbose
+4. java -jar /bin/alfresco-mmt.jar install   amps_share\<moduleName>-share.amp tomcat\webapps\share -force -nobackup -verbose
 
-### Utils VM:
-- Path to scripts `/etc/init.d/`
-- Path to alfresco `/opt/alfresco/`
-- `ps -ef | grep java ` List running process
+### Userfull bash command/tips:
+- List of running process: `ps -ef | grep java ` 
+- List of stopped process: `jobs `
+- List  of commands you are allowed to do: `sudo su -l `
+- Bring foreground process towards: `fg ` 
 - `netstat -an | grep alfresco | grep java | grep 8080 `
 - `less ` -> "shif g" end file
-- `less ` -> "/<cosacercare>" "n prossimo match"
+- `less ` -> Search in: `/wordtosearch` next match: `n` 
 - `sudo su - <user>`
 - `sudo -i `
-- `sudo su -l ` lista di comandi che puoi fare
-- `jobs `list stopped process
-- `fg ` bring foreground process towards
 - `host <ip>` show ip
-- `grep -rI --exclude-dir=test --exclude-dir=target "cosa cercare" . `
-- `find . -name "cosacercare" `
+- `grep -rI --exclude-dir=test --exclude-dir=target "<wordtosearch>" . `
+- `find . -name "<wordtosearch>" `
 - `chown <owner>:<group> <file>`
 - `find . -name service.xml -exec du -h  \{\} \; | sort -k1 -h` trova file mostra il size e ordina; -k1 sta per prima colonna
 - `du -sh <directory>`
 
 ### Usefull snippets
 
-Header per visualizzare o scaricare un documento . [IETF DOC](www.ietf.org/rfc/rfc2183.txt).
+Header to set in order to show or dowload a document in a respose object in a Webscript. [IETF DOC](www.ietf.org/rfc/rfc2183.txt):
 
 ``` java
 
@@ -80,7 +76,7 @@ Header per visualizzare o scaricare un documento . [IETF DOC](www.ietf.org/rfc/r
     res.addHeader("Content-Disposition", "attachment; filename=" + fileName);
 ```
 
-Visualizzazione immagini in base64
+Visualiza images in base64:
 
 ``` html
 
@@ -99,7 +95,8 @@ Visualizzazione immagini in base64
     fileFolderService.exists(nodeRef)
 ```
 
-Check if node ref is valid and has right type
+Check if node ref is valid and has right type:
+
 ``` java
     QName nodeType = nodeService.getType(dest);
     FileFolderServiceType fileFolderNodeType = fileFolderService.getType(nodeType);
