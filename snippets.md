@@ -6,7 +6,7 @@ Hyphens are typically used in artifact IDs not in group IDs
 
 #### General tips:
 
-- Check of custom types model `/alfresco/s/api/classes/<prefix>_<name>`
+- To check out custom types model already deployed go to `/alfresco/s/api/classes/<prefix>_<name>`
 
 - If you apply a hot edit to the `share-config-custom.xml` you need to refresh all your webscripts from `/share/page/index`.
 
