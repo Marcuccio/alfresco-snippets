@@ -11,7 +11,7 @@ Hyphens are typically used in artifact IDs not in group IDs
 
 - If you apply a hot edit to the `share-config-custom.xml` you need to refresh all your webscripts from `/share/page/index`.
 
-- Retrieve a repositoryID: `curl -s -u admin:alfresco "http://<hostname>:8080/alfresco/s/cmis" | grep repositoryId `
+- To repositoryId `curl -s -u admin:alfresco "http://<hostname>:8080/alfresco/s/cmis" | grep repositoryId `
 
 - CMIS endpoint `/alfresco/service/api/cmis`
 
@@ -29,16 +29,13 @@ Hyphens are typically used in artifact IDs not in group IDs
 	tomcat/bin/shutdown.sh
 ````
 
-### Opzioni JVM alfresco:
-> tomcat/bin/setenv.bat
-
 ### Hot deploy:
 1. In Alfresco-Share navigate to `Repository>Data dictionary>Models`
 2. Set property `model active = TRUE`
 3. check `alfresco/service/api/classes/<prefix>_<name>`
 4. Will not visible until the `share-config-custom.xml` will not be modified
 
-### How to deploy AMPs:
+### Deploy AMPs:
 1. ` java -jar /bin/alfresco-mmt.jar list      tomcat\webapps\alfresco `
 2. ` java -jar /bin/alfresco-mmt.jar uninstall <moduleName> tomcat\webapps\alfresco `
 3. ` java -jar /bin/alfresco-mmt.jar install   amps\mymodule-repo.amp tomcat\webapps\alfresco -force -nobackup -verbose `
@@ -66,7 +63,6 @@ Hyphens are typically used in artifact IDs not in group IDs
 Header to set in order to show or dowload a document in a respose object for Webscripts. [IETF DOC](https://www.ietf.org/rfc/rfc2183.txt):
 
 ``` java
-
     res.addHeader("Content-Disposition", "inline; filename=" + fileName);
     res.addHeader("Content-Disposition", "attachment; filename=" + fileName);
 ```
@@ -74,12 +70,10 @@ Header to set in order to show or dowload a document in a respose object for Web
 Visualize images in base64:
 
 ``` html
-
     <img src="data:${mimetype};base64,${fileBase64}" class="thumbnail"/>
 ```
 
 ``` java
-
     InputStream inputStream = this.contentService.getReader( nodeRef , ContentModel.PROP_CONTENT ).getContentInputStream();
     byte[] arrBuff = IOUtils.toByteArray( inputStream );
     inputStream.close();
