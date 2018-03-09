@@ -6,17 +6,11 @@
 Hyphens are typically used in artifact IDs not in group IDs
 
 #### General tips:
-
 - To check out custom types model already deployed go to `/alfresco/s/api/classes/<prefix>_<name>`
-
 - If you apply a hot edit to the `share-config-custom.xml` you need to refresh all your webscripts from `/share/page/index`.
-
 - To repositoryId `curl -s -u admin:alfresco "http://<hostname>:8080/alfresco/s/cmis" | grep repositoryId `
-
 - CMIS endpoint `/alfresco/service/api/cmis`
-
 - To enable surfbug: `/share/page/surfBugStatus`
-
 - To enable debug log level for JS-webscript: go to `tomcat/shared/classes/alfresco/extension/custom-log4j.properties` and change
 ````
 	log4j.logger.org.alfresco.repo.jscript=debug
@@ -61,14 +55,12 @@ Hyphens are typically used in artifact IDs not in group IDs
 ### Usefull snippets
 
 Header to set in order to show or dowload a document in a respose object for Webscripts. [IETF DOC](https://www.ietf.org/rfc/rfc2183.txt):
-
 ``` java
     res.addHeader("Content-Disposition", "inline; filename=" + fileName);
 	res.addHeader("Content-Disposition", "attachment; filename=" + fileName);
 ```
 
 Visualize images in base64:
-
 ``` html
     <img src="data:${mimetype};base64,${fileBase64}" class="thumbnail"/>
 ```
@@ -81,7 +73,6 @@ Visualize images in base64:
 ```
 
 Check if node ref is valid and has right type:
-
 ``` java
     QName nodeType = nodeService.getType(nodeRef);
     FileFolderServiceType fileFolderNodeType = fileFolderService.getType(nodeType);
