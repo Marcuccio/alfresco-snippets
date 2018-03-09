@@ -26,7 +26,7 @@ Hyphens are typically used in artifact IDs not in group IDs
 ### Start/Stop alfresco:
 ````
     tomcat/bin/startup.sh && tail -f tomcat/logs/catalina.out 
-	tomcat/bin/shutdown.sh
+    tomcat/bin/shutdown.sh
 ````
 
 ### Hot deploy:
@@ -64,7 +64,7 @@ Header to set in order to show or dowload a document in a respose object for Web
 
 ``` java
     res.addHeader("Content-Disposition", "inline; filename=" + fileName);
-    res.addHeader("Content-Disposition", "attachment; filename=" + fileName);
+	res.addHeader("Content-Disposition", "attachment; filename=" + fileName);
 ```
 
 Visualize images in base64:
