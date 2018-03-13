@@ -1,4 +1,9 @@
-# ALFRESCO NOTES 
+# ALFRESCO NOTES
+
+## Summary
+
+#### [How copy a node](#copy-noderef)
+----------
 
 #### Maven archetype generator:
 > mvn archetype:generate -Dfilter=org.alfresco:
@@ -53,6 +58,8 @@ Hyphens are typically used in artifact IDs not in group IDs
 - `du -sh <directory>`
 
 ### Usefull snippets
+
+### Copy noderef
 
 Header to set in order to show or dowload a document in a respose object for Webscripts. [IETF DOC](https://www.ietf.org/rfc/rfc2183.txt):
 ``` java
