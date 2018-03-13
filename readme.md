@@ -46,7 +46,7 @@ Hyphens are typically used in artifact IDs not in group IDs
 - List of stopped process: `jobs `
 - Bring foreground process towards: `fg ` 
 - `netstat -an | grep alfresco | grep java | grep 8080 `
-- `less ` -> **to search** type: `/wordtosearch` -> **next match** press: `n`
+- `less ` -> *to search* type: `/wordtosearch` -> *next match* press: `n`
 - List  of commands you are allowed to do: `sudo su -l `
 - `sudo su - <user>`
 - `sudo -i `
