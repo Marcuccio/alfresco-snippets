@@ -25,7 +25,7 @@ Hyphens are typically used in artifact IDs not in group IDs
 ### Start/Stop alfresco:
 ````
     tomcat/bin/startup.sh && tail -f tomcat/logs/catalina.out 
-    tomcat/bin/shutdown.sh
+	tomcat/bin/shutdown.sh
 ````
 
 ### Hot deploy:
@@ -57,17 +57,18 @@ Hyphens are typically used in artifact IDs not in group IDs
 - `find . -name service.xml -exec du -h  \{\} \; | sort -k1 -h` trova file mostra il size e ordina; -k1 sta per prima colonna
 - `du -sh <directory>`
 
-### Usefull snippets
+## Usefull snippets
 
 ### Copy noderef
+[Alfresco official doc reference](https://docs.alfresco.com/5.2/references/dev-services-copy.html)
 
-Header to set in order to show or dowload a document in a respose object for Webscripts. [IETF DOC](https://www.ietf.org/rfc/rfc2183.txt):
+###  Header to set in order to show or dowload a document in a respose object for Webscripts. [IETF DOC](https://www.ietf.org/rfc/rfc2183.txt):
 ``` java
     res.addHeader("Content-Disposition", "inline; filename=" + fileName);
-	res.addHeader("Content-Disposition", "attachment; filename=" + fileName);
+    res.addHeader("Content-Disposition", "attachment; filename=" + fileName);
 ```
 
-Visualize images in base64:
+### Visualize images in base64:
 ``` html
     <img src="data:${mimetype};base64,${fileBase64}" class="thumbnail"/>
 ```
@@ -79,7 +80,7 @@ Visualize images in base64:
     return Base64.encodeBase64URLSafeString( arrBuff );
 ```
 
-Check if node ref is valid and has right type:
+### Check if node ref is valid and has right type:
 ``` java
     QName nodeType = nodeService.getType(nodeRef);
     FileFolderServiceType fileFolderNodeType = fileFolderService.getType(nodeType);
