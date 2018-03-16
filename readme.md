@@ -14,7 +14,7 @@ Hyphens are typically used in artifact IDs not in group IDs
 #### General tips:
 - Check out models already deployed: `/alfresco/s/api/classes/<prefix>_<name>`
 - If you apply a hot edit to the `share-config-custom.xml` you need to refresh all your webscripts from `/share/page/index`.
-- How get the **repositoryId** `curl -s -u admin:alfresco "http://<hostname>:8080/alfresco/s/cmis" | grep repositoryId `
+- How get the **repositoryId** `curl -s -u admin:alfresco "http://<hostname>:<port>/alfresco/s/cmis" | grep repositoryId `
 - CMIS endpoint `/alfresco/service/api/cmis`
 - Enable **surfbug**: `/share/page/surfBugStatus`
 - Enable **debug log** for JS-webscript: go to `tomcat/shared/classes/alfresco/extension/custom-log4j.properties` and change
