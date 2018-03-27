@@ -3,6 +3,7 @@
 ## Summary
 
 #### [How copy a node](#copy-noderef)
+#### [How hide components in surf page](#hide-components-in-surf-page)
 
 ----------
 
@@ -58,6 +59,15 @@ Hyphens are typically used in artifact IDs not in group IDs
 - `du -sh <directory>`
 
 ## Usefull snippets
+
+### Hide components in surf page
+[Alfresco official doc reference](https://docs.alfresco.com/5.2/tasks/dev-extensions-share-tutorials-hide-content.html)
+Summary:
+ - Enable **surfbug**: `/share/page/surfBugStatus`
+ - Take notes about *region-id*,*source-id* and sub-component's *id* (The ID is the one after the hash)
+ - Put the xml definition under: `amp-share/src/main/amp/config/alfresco/web-extension/site-data/extensions`
+ 
+ ![SurfBug](/img/surfBug_information?raw=true "Surf bug view")
 
 ### Copy noderef
 [Alfresco official doc reference](https://docs.alfresco.com/5.2/references/dev-services-copy.html)
