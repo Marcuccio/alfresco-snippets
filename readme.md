@@ -67,7 +67,8 @@ Summary:
  - Take notes about *region-id*,*source-id* and sub-component's *id* (The ID is the one after the hash)
  - Put the xml definition under: `amp-share/src/main/amp/config/alfresco/web-extension/site-data/extensions`
  
- ![SurfBug](img/surfBug_information?raw=true "Surf bug view")
+ ![SurfBug](img/surfBug_information.png)
+
 
 ### Copy noderef
 [Alfresco official doc reference](https://docs.alfresco.com/5.2/references/dev-services-copy.html)
