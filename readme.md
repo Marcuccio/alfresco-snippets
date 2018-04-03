@@ -2,8 +2,9 @@
 
 ## Summary
 
-#### [How copy a node](#copy-noderef)
 #### [How hide components in surf page](#hide-components-in-surf-page)
+#### [How copy a node](#copy-noderef)
+#### [Visualize images in base64](#visualize-images-in-base64)
 
 ----------
 
@@ -62,15 +63,20 @@ Hyphens are typically used in artifact IDs not in group IDs
 
 ### Hide components in surf page
 [Alfresco official doc reference](https://docs.alfresco.com/5.2/tasks/dev-extensions-share-tutorials-hide-content.html)
+
 Summary:
  - Enable **surfbug**: `/share/page/surfBugStatus`
- - Take notes about *region-id*,*source-id* and sub-component's *id* (The ID is the one after the hash)
+ - Take notes about *region-id*, *source-id* and sub-component's *id* (the ID is the one after the hash)
  - Put the xml definition under: `amp-share/src/main/amp/config/alfresco/web-extension/site-data/extensions`
  
  ![SurfBug](/img/surfBug_information?raw=true "Surf bug view")
 
+----------
+
 ### Copy noderef
 [Alfresco official doc reference](https://docs.alfresco.com/5.2/references/dev-services-copy.html)
+
+----------
 
 ###  Header to set in order to show or dowload a document in a respose object for Webscripts. 
 [IETF DOC](https://www.ietf.org/rfc/rfc2183.txt):
@@ -79,17 +85,21 @@ Summary:
     res.addHeader("Content-Disposition", "attachment; filename=" + fileName);
 ```
 
+----------
+
 ### Visualize images in base64:
 ``` html
-    <img src="data:${mimetype};base64,${fileBase64}" class="thumbnail"/>
+    <img src="data:${mimetype};base64,${fileBase64}"/>
 ```
 
 ``` java
-    InputStream inputStream = this.contentService.getReader( nodeRef , ContentModel.PROP_CONTENT ).getContentInputStream();
-    byte[] arrBuff = IOUtils.toByteArray( inputStream );
+    InputStream inputStream = contentService.getReader(nodeRef , ContentModel.PROP_CONTENT).getContentInputStream();
+    byte[] arrBuff = IOUtils.toByteArray(inputStream);
     inputStream.close();
-    return Base64.encodeBase64URLSafeString( arrBuff );
+    return Base64.encodeBase64URLSafeString(arrBuff);
 ```
+
+----------
 
 ### Check if node ref is valid and has right type:
 ``` java
@@ -97,7 +107,7 @@ Summary:
     FileFolderServiceType fileFolderNodeType = fileFolderService.getType(nodeType);
 
     if (fileFolderService.exists(nodeRef) || !fileFolderNodeType.equals(FileFolderServiceType.FOLDER) ) {
-        throw new WebScriptException(
+        throw new MyException(
                 HttpServletResponse.SC_BAD_REQUEST,
                 "Destination folder must be of type "+ContentModel.TYPE_FOLDER);
     }
