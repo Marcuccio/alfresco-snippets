@@ -12,7 +12,7 @@
 #### Maven archetype generator:
 > mvn archetype:generate -Dfilter=org.alfresco:
 
-Hyphens are typically used in artifact IDs not in group IDs
+*N.B. Hyphens are typically used in artifact IDs not in group IDs*
 
 #### General tips:
 - Check out models already deployed: `/alfresco/s/api/classes/<prefix>_<name>`
