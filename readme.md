@@ -2,6 +2,7 @@
 
 ## Summary
 
+#### [Where to find what](#where-to-find-what)
 #### [How hide components in surf page](#hide-components-in-surf-page)
 #### [How copy a node](#copy-noderef)
 #### [Visualize images in base64](#visualize-images-in-base64)
@@ -57,6 +58,9 @@ Hyphens are typically used in artifact IDs not in group IDs
 - `find . -name service.xml -exec du -h  \{\} \; | sort -k1 -h` trova file mostra il size e ordina; -k1 sta per prima colonna
 - `chown <owner>:<group> <file>`
 - `du -sh <directory>`
+
+### Where to find what:
+- in `alfresco\WEB-INF\lib\alfresco-repository-5.2.3.jar\alfresco\model` you can find all the *out-of-the-box model*
 
 ## Usefull snippets
 
