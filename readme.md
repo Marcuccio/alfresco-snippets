@@ -60,7 +60,7 @@ Hyphens are typically used in artifact IDs not in group IDs
 - `du -sh <directory>`
 
 ### Where to find what
-- in `alfresco\WEB-INF\lib\alfresco-repository-5.2.3.jar\alfresco\model` you can find all the *out-of-the-box model*
+- in `alfresco\WEB-INF\lib\alfresco-repository-5.2.3.jar\alfresco\model` you can find all the **out-of-the-box model**
 
 ## Usefull snippets
 
