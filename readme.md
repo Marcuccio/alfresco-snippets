@@ -2,7 +2,7 @@
 
 ## Summary
 
-#### [Where to find what](#where-to-find-what)
+#### [Where to find what](#where-to-find-what:)
 #### [How hide components in surf page](#hide-components-in-surf-page)
 #### [How copy a node](#copy-noderef)
 #### [Visualize images in base64](#visualize-images-in-base64)
