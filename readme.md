@@ -60,7 +60,8 @@
 - `du -sh <directory>`
 
 ### Where to find what
-- in `alfresco\WEB-INF\lib\alfresco-repository-5.2.3.jar\alfresco\model` you can find all the **out-of-the-box model**
+- **out-of-the-box model** in `alfresco/WEB-INF/lib/alfresco-repository-5.2.3.jar/alfresco/model` 
+- **out-of-the-box form control** in `share/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/form/controls` 
 
 ## Usefull snippets
 
